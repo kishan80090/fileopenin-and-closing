@@ -1,117 +1,107 @@
 #include<iostream>
-#include<string.h>
-class A
+using namespace std;
+void question(int A,int B)
 {
-char Name[50],Account[50];
-int Balance;
-public:
-A(char n[50],char a[50],int b)
+if(A==B)
 {
-strcpy(Name,n);
-strcpy(Account,a);
-Balance=b;
-}
-public: A()
-{
-std::cout<<"Enter the name ";
-std::cin>>Name;
-std::cout<<"Enter the account number ";
-std::cin>>Account;
-std::cout<<"Enter the balance ";
-std::cin>>Balance;
-}
-public:
-void display()
-{
-std::cout<<"Name "<<Name<<" Account number "<<Account<<" Balance "<<Balance<<"\n";
-}
-public:
-void deposit()
-{
-int depositamount;
-std::cout<<"Enter the deposit balance ";
-std::cin>>depositamount;
-if(depositamount>=1)
-{
-Balance=Balance+depositamount-5;
+cout<<"* Right *"<<endl;
 }
 else
-std::cout<<" not deposit balance ";
-}
-public:
-void withdrawal()
 {
-int withdrawalamount;
-std::cout<<"Enter the withdrawal balance ";
-std::cin>>withdrawalamount;
-if(withdrawalamount>=1)
-{
-Balance=Balance-withdrawalamount;
+cout<<" => Wrong ="<<endl;
 }
-else
-std::cout<<" not withdrawal balace ";
 }
-public:
-void deposit(int depositamount)
-{
-if(depositamount>=1)
-{
-Balance=Balance+depositamount;
-}
-else
-std::cout<<" not deposit amount";
-}
-public:
-void withdrawal(int withdrawalamount)
-{
-if(withdrawalamount>=1)
-{
-Balance=Balance-withdrawalamount-10;
-}
-else
-std::cout<<"not withdrawal balance ";
-}
-};
-class B:public A
-{
-public: B():A()
-{
-std::cout<<" \nprivate Bank ";
-}
-public:
-void deposit()
-{
-int depositamount;
-std::cout<<"\nEnter the deposit balance ";
-std::cin>>depositamount;
-if(depositamount>=5)
-{
-A::deposit(depositamount-5);
-}
-else
-std::cout<<" not deposit balance ";
-}
-public:
-void withdrawal()
-{
-int withdrawalamount;
-std::cout<<"\nEnter the withdrawal balance ";
-std::cin>>withdrawalamount;
-if(withdrawalamount>=5)
-{
-A::withdrawal(withdrawalamount-5);
-}
-else
-std::cout<<"not withdrawal balance ";
-}
-};
 int main()
 {
-B b;
-b.display();
-b.deposit();
-b.display();
-b.withdrawal();
-b.display();
+int r=0,f=0;
+int A,B;
+cout<<"1-> ***  what is 1+1  ***"<<endl;
+cout<<"\n"<<endl;
+cout<<"1.  3"<<endl;
+cout<<"2.  2"<<endl;
+cout<<"3.  2.5"<<endl;
+cout<<"4.  4/1"<<endl;
+cout<<"Enter the choose quote "<<endl;
+cin>>B;
+question(2,B);
+if(B==2)
+{
+r=r+1;
+}
+else
+f=f+1;
+cout<<"\n";
+cout<<"2-> ***  what is 2.5+2.9  ***"<<endl;
+cout<<"\n"<<endl;
+cout<<"1.  5.1"<<endl;
+cout<<"2.  5.2"<<endl;
+cout<<"3.  5.3"<<endl;
+cout<<"4.  5.4"<<endl;
+cout<<"Enter the choose quote "<<endl;
+cin>>B;
+question(4,B);
+if(B==4)
+{
+r=r+1;
+}
+else
+f=f+1;
+cout<<"3-> ***  what is capital of india  ***"<<endl;
+cout<<"\n"<<endl;
+cout<<"1.  Pakistan"<<endl;
+cout<<"2.  Mubai"<<endl;
+cout<<"3.  New deldi"<<endl;
+cout<<"4.  Varanasi"<<endl;
+cout<<"Enter the choose quote "<<endl;
+cin>>B;
+question(3,B);
+if(B==3)
+{
+r=r+1;
+}
+else
+f=f+1;
+cout<<"4-> ***  what is CPU fullfom  ***"<<endl;
+cout<<"\n"<<endl;
+cout<<"1.  central procesing unit"<<endl;
+cout<<"2.   central procesing machine"<<endl;
+cout<<"3.  central procesing"<<endl;
+cout<<"4.  central procesing language"<<endl;
+cout<<"Enter the choose quote "<<endl;
+cin>>B;
+question(1,B);
+if(B==1)
+{
+r=r+1;
+}
+else
+f=f+1;
+cout<<"5.-> ***  what is keyboard  ***"<<endl;
+cout<<"output"<<endl;
+cout<<"input"<<endl;
+cout<<"other"<<endl;
+cout<<"input and output"<<endl;
+cout<<"Enter the choose quote "<<endl;
+cin>>B;
+question(2,B);
+if(B==2)
+{
+r=r+1;
+}
+else
+f=f+1; 
+cout<<"\n"<<endl;
+cout<<"***************Final  Result****************"<<endl;
+cout<<"right: "<<r<<endl;
+cout<<"wrong: "<<f<<endl;
+cout<<"***************End**************************"<<endl;
+if( r!=f && f==0)
+{
+cout<<"  ** *  * *   **  "<<endl;
+cout<<" *=> ** Winner ** <=* "<<endl;
+cout<<"  ** *  * *   **  "<<endl;
+}
+else
+cout<<"   ** Try Again **  "<<endl;
 return 0;
 }

@@ -1,15 +1,11 @@
 #include<iostream>
-#include<stdlib.h>
-#include<fstream> 
+#include<stdlib.h> 
 using namespace std;
-
-struct node 
+typedef struct node 
 {
     int data;
     struct node* next;
-};
-
-typedef struct node stack;
+}stack;
 
 void init(stack** hd)
  {
@@ -21,10 +17,10 @@ int empty(stack* hd)
 }
 void push(stack** hd, int data)
  {
-    stack* new_node = (stack*)malloc(sizeof(stack)); 
-    new_node->data = data; 
-    new_node->next = *hd;  
-    *hd = new_node;  
+    stack* node = (stack*)malloc(sizeof(stack)); 
+    node->data = data; 
+    node->next = *hd;  
+    *hd = node;  
 }
 int pop(stack** hd) {
     if (*hd == NULL) 
@@ -37,8 +33,6 @@ int pop(stack** hd) {
 }
 int main()
  {
- ofstream file("top.txt");
- 
     char str[] = "123456789";
     stack* st;
     init(&st); 
@@ -51,12 +45,8 @@ int main()
     while (!empty(st)) 
 	{
         int x = pop(&st);
-        file <<" "<< x;
         cout <<" "<< x;
     }
-            std::cout<<"\ntop file open";
-    file.close();
-    
     return 0;
 }
 
