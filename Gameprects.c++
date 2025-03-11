@@ -1,12 +1,11 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-
 class Game 
 {
     char Firstplayername[50], Secondplayername[50];
     char board[3][3];
-    int currentPlayer;
+    int Player;
 public:
     Game()
     {
@@ -14,8 +13,6 @@ public:
         cin >> Firstplayername;
         cout << "Enter The Second Player Name: ";
         cin >> Secondplayername;
-
-        
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
@@ -23,9 +20,8 @@ public:
                 board[i][j] = ' ';
             }
         }
-        currentPlayer = 1;
+        Player = 1;
     }
-
     void design() 
     {
         cout << " ___________\n";
@@ -43,22 +39,35 @@ public:
                 cout << " -----------\n";
         }
     }
-
     void display() 
     {
         cout << "\nFirst Player Name: " << Firstplayername << "\n";
         cout << "Second Player Name: " << Secondplayername << "\n";
     }
-
-    
-    void makeMove() 
+    void show() 
     {
         int move;
-        char symbol = (currentPlayer == 1) ? 'X' : 'O';
-        cout << (currentPlayer == 1 ? Firstplayername : Secondplayername) << "'s turn (Enter a number 1-9): ";
-        cin >> move;
+        char A = (Player == 1)?'X' : 'O';
+        cout << (Player == 1 ? Firstplayername : Secondplayername) << "Enter a number 1-9: ";
+        cin >> move;  
+        
+        int row = (move - 1) / 3;
+        int col = (move - 1) % 3; 
+       
+        board[row][col] = A;
+        Player = (Player == 1) ? 2 : 1;
+    }  
+    void playGame()
+    {
+        int count = 0;
+        while (true) 
+        {
+            display();
+            design();
+            show();
+            count++;
+        }
     }
-
 };
 int main()
 {
@@ -66,4 +75,3 @@ int main()
     g.playGame();
     return 0;
 }
-

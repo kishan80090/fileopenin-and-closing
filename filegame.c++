@@ -117,7 +117,7 @@ int main()
         {
             design(file);
             cout << "Try Again Draw Game\n";
-            file << "Try Again Draw Game\n"
+            file << "Try Again Draw Game\n";
             break;
         }
         turn++;
@@ -126,4 +126,3 @@ int main()
     file.close();
     return 0;
 }
-
