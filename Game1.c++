@@ -55,11 +55,24 @@ bool checkWinner()
 } 
     return false;
 }
+int publicomputer()
+{
+if(int i=1;i<=3;i++)
+{
+if(int j=1;j<=3;j++)
+{
+}
+
+
+
+}
+return 0;
+}
 int main()
  {
     cout << "Enter the first player name: ";
     cin >> firstname;
-    cout << "Enter the second player name: ";
+    cout << "Enter the computer player: ";
     cin >> secondname;
     while (true) 
 	{
@@ -86,7 +99,7 @@ int main()
                     draw = false;
                     break;
                 }
-            }
+         }
             if (!draw) break;
         }
         if (draw) 
@@ -97,6 +110,7 @@ int main()
         }
         turn++;
     }
+    publicomputer();
     return 0;
 }
 

@@ -1,23 +1,27 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}}; 
-void design() 
-{
-    cout << "\n";
-    cout << "    Game start     \n";
-    cout << "                   \n";
-    cout << "   " << board[0][0] << "     " << board[0][1] << "     " << board[0][2] << "     " << "\n";
-    cout << "                   \n";                                                      
-    cout << "                   \n";                                                    
-    cout << "   " << board[1][0] << "     " << board[1][1] << "     " << board[1][2] << "     " << "\n";
-    cout << "                   \n";
-    cout << "                   \n";
-    cout << "   " << board[2][0] << "     " << board[2][1] << "     " << board[2][2] << "     " << "\n";
-    cout << "                   \n";
-    cout << "                   \n";      
-}
 int main()
-{
-design();
-return 0;
+ {
+ int i,j,count=0,loopcount=0;
+    for (i = 2; i <= 500; i++) 
+	{
+        int isPrime = 1;
+        for (j = 2; j <= i / 2; j++)
+		 {
+            if (i % j == 0)
+			 {
+                isPrime = 0;              
+            }
+        }
+        if (isPrime)
+		 {
+            cout << i << " ";
+            count=count+1;
+        }
+        loopcount=loopcount+1;
+    }
+    std::cout<<"\n"<<"count= "<<count;
+    std::cout<<"\n"<<"loopcount= "<<loopcount;
+    return 0;
 }
+
