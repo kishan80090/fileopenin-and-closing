@@ -1,27 +1,55 @@
-#include <iostream>
+#include<iostream>
+#include<stdlib.h>
 using namespace std;
-int main()
- {
- int i,j,count=0,loopcount=0;
-    for (i = 2; i <= 500; i++) 
-	{
-        int isPrime = 1;
-        for (j = 2; j <= i / 2; j++)
-		 {
-            if (i % j == 0)
-			 {
-                isPrime = 0;              
-            }
-        }
-        if (isPrime)
-		 {
-            cout << i << " ";
-            count=count+1;
-        }
-        loopcount=loopcount+1;
-    }
-    std::cout<<"\n"<<"count= "<<count;
-    std::cout<<"\n"<<"loopcount= "<<loopcount;
-    return 0;
+typedef struct node
+{
+int data;
+struct node*next;
+}stack;
+void init(stack**hd)
+{
+*hd=NULL;
 }
+int empty(stack*hd)
+{
+return hd==NULL;
+}
+void push(stack**hd,int data)
+{
+stack* node=(stack*)malloc(sizeof(stack));
+node->data=data;
+node->next=*hd;
+*hd=node;
+}
+int pop(stack**hd)
+{
+if((*hd)==NULL)
+return 0;
+stack* temp=*hd;
+*hd=temp->next;
+int x=temp->data;
+free(temp);
+return x;
+}
+int main()
+{
+char str[]="123456789";
+stack* st;
+init (&st);
+int i=0;
+while(str[i]!='\0')
+{
+push(&st,str[i]-'0');
+i++;
+}
+while(!empty(st))
+{
+int x= pop(&st);
+cout<<" "<<x;
+}
+return 0;
+}
+
+
+
 

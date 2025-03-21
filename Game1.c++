@@ -57,14 +57,13 @@ bool checkWinner()
 }
 int publicomputer()
 {
+int i;
 if(int i=1;i<=3;i++)
 {
 if(int j=1;j<=3;j++)
 {
+
 }
-
-
-
 }
 return 0;
 }
