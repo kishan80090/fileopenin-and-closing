@@ -12,12 +12,12 @@ cout<<"\nSubject "<<subject<<endl;
 strcpy(this->bookname,bookname);
 strcpy(this->subject,subject);
 }
-void display()
+public:void display()
 {
 cout<<"book Name "<<bookname;
 cout<<"\nSubject "<<subject;
 }
- Book()
+ public:Book()
 {
 cout<<"Enter the book name ";
 cin>>bookname;

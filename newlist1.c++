@@ -40,7 +40,7 @@ int pos (listnode*hd,int value)
             return count;
         hd=hd->next;
         count++;
-    }
+   }
     return -1;
 }
 void printAll(listnode*hd)
@@ -123,9 +123,6 @@ int main()
             deletenode(&hd,n);
             printf("\nDelete ");
             break;
-            default:
-            printf("Not Found");
-            return 0;
         }
-    }
-}
+       }
+      }

@@ -15,7 +15,7 @@ int main()
         }
         if (isPrime)
 		 {
-            cout << i << " ";
+            cout << i <<" ";
             count=count+1;
         }
         loopcount=loopcount+1;
